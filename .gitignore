@@ -13,10 +13,16 @@ android/.gradle/
 android/local.properties
 android/key.properties
 
-# iOS
-ios/Pods/
-ios/.symlinks/
-**/Flutter/flutter_export_environment.sh
+# iOS (Flutter tarafından üretilenler)
+ios/Flutter/Generated.xcconfig
+ios/Flutter/ephemeral/
+ios/Flutter/flutter_export_environment.sh
+
+# macOS (Flutter tarafından üretilenler)
+macos/Flutter/ephemeral/
+
+# Android (Flutter tarafından üretilenler)
+android/app/src/main/java/io/flutter/plugins/GeneratedPluginRegistrant.java
 
 # IDE
 .idea/
