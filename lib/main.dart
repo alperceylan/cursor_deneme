@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart'; // Flutter'ın görsel bileşenleri
+import 'about_page.dart';
 
 void main() {
   // Uygulama buradan başlar
@@ -20,11 +21,22 @@ class MyApp extends StatelessWidget {
         // Tema (renk, yazı tipleri vb.)
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: const Scaffold(
+      routes: {'/about': (context) => const AboutPage()},
+      home: Scaffold(
         // Açılışta görülecek ilk sayfa (iskelet)
         body: Center(
           // İçeriği ortaya hizalar
-          child: Text('Hello, PhysioFit AI!'), // Ortada görünen yazı
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              const Text('Hello, PhysioFit AI!'),
+              SizedBox(height: 16),
+              TextButton(
+                onPressed: () => Navigator.pushNamed(context, '/about'),
+                child: const Text('Go to About'),
+              ),
+            ],
+          ),
         ),
       ),
     );
