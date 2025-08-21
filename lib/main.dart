@@ -31,9 +31,11 @@ class MyApp extends StatelessWidget {
             children: [
               const Text('Hello, PhysioFit AI!'),
               SizedBox(height: 16),
-              TextButton(
-                onPressed: () => Navigator.pushNamed(context, '/about'),
-                child: const Text('Go to About'),
+              Builder(
+                builder: (context) => TextButton(
+                  onPressed: () => Navigator.pushNamed(context, '/about'),
+                  child: const Text('Go to About'),
+                ),
               ),
             ],
           ),
